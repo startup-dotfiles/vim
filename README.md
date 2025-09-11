@@ -3,7 +3,7 @@
 ```sh
 # Backup/Rename
 [ -d $HOME/.vim ] && mv $HOME/.vim $HOME/.vim.bak
-[ -f $HOME/.vimrc ] && mv $HOME/.vimrc .vimrc.bak
+[ -f $HOME/.vimrc ] && mv $HOME/.vimrc $HOME/.vimrc.bak
 ```
 
 ```sh
