@@ -19,10 +19,8 @@ set laststatus=2
 " Using the mouse
 set mouse=a
 " Syntax highlighting
-filetype plugin indent on
-filetype indent on
-filetype on
 syntax on
+filetype plugin indent on
 " Highlighting search results
 " set incsearch   " only first word
 set hlsearch  " all words
@@ -95,28 +93,29 @@ endif
 call plug#begin('~/.local/share/vim/plugged')
     " List your plugins here
     Plug 'tpope/vim-sensible'
-    Plug 'fedorenchik/fasm.vim' " Flat Assembler support for vim
-    Plug 'junegunn/fzf' " fzf integrated with vim
-    Plug 'tpope/vim-commentary' " comment stuff out
     Plug 'godlygeek/tabular'    " text filtering and alignment
     Plug 'preservim/nerdtree'   " file tree explorer
-    "Plug 'dense-analysis/ale' " providing linting (syntax  checking and semantic errors)
-    Plug 'yegappan/lsp'         " LSP for vim9
-    Plug 'skywind3000/asyncrun.vim' " Run Async Shell Commands in Vim
-    Plug 'bfrg/vim-c-cpp-modern'     " Extended Vim syntax highlighting for C and C++(C++11/14/17/20/23)
+    Plug 'junegunn/fzf'         " fzf integrated with vim
+    Plug 'axvr/org.vim'         " Org mode syntax highlighting and folding for Vim
+
+    Plug 'fedorenchik/fasm.vim' " Flat Assembler support for vim
     Plug 'llvm/llvm.vim'        " Vim filetype support for LLVM
-    Plug 'axvr/org.vim'         " Org.vim is a minimal Org mode and Outline mode plugin for Vim providing only syntax highlighting and folding
+    Plug 'yegappan/lsp'         " LSP for vim9
+    "Plug 'dense-analysis/ale'  " providing linting (syntax  checking and semantic errors)
+    Plug 'skywind3000/asyncrun.vim'  " Run Async Shell Commands in Vim
+    Plug 'bfrg/vim-c-cpp-modern'     " Extended Vim syntax highlighting for C and C++(C++11/14/17/20/23)
+    Plug 'tpope/vim-commentary' " comment stuff out
 
     Plug 'vim-airline/vim-airline' " status/tabline for vim
     Plug 'vim-airline/vim-airline-themes' " airline theme
 
     Plug 'NLKNguyen/papercolor-theme' " Light & Dark Vim color schemes inspired by Google's Material Design
-    Plug 'sainnhe/everforest'  " 𝐄𝐯𝐞𝐫𝐟𝐨𝐫𝐞𝐬𝐭 Theme
+    Plug 'sainnhe/everforest'  " Everforest Theme
 call plug#end()
 
 " -------------------------------------------------------------------------------------------------------------------
 
-" Installed plugin configuration 
+" Installed plugin configuration
 " [papercolor-theme]
 " set t_Co=256   " This is may or may not needed.
 " set background=dark
@@ -152,10 +151,10 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let lspOpts = #{autoHighlightDiags: v:true}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 let lspServers = [#{
-	\	  name: 'clang',
-	\	  filetype: ['c', 'cpp'],
-	\	  path: '/usr/bin/clangd',
-	\	  args: ['--background-index', '--header-insertion=iwyu']
+	\   name: 'clang',
+	\   filetype: ['c', 'cpp'],
+	\   path: '/usr/bin/clangd',
+	\   args: ['--background-index', '--header-insertion=iwyu']
 	\ }]
 autocmd User LspSetup call LspAddServer(lspServers)
 
