@@ -54,6 +54,11 @@ set nocompatible    " disable compatilbe with vi
 set ttimeout
 set ttimeoutlen=100
 
+" Fixes
+" https://jorenar.com/blog/vim-xdg
+set viminfofile=$XDG_STATE_HOME/viminfo
+
+" Misc
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --hidden
     set grepformat=%f:%l:%c:%m
