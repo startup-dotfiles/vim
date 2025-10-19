@@ -15,7 +15,7 @@
 
 # Base on XDG Spec (Recommanded)
 mkdir -p $HOME/.config/vim
-git clone https://github.com/range4-skyz/vim $HOME/.config/vim
+git clone https://github.com/startup-dotfiles/vim $HOME/.config/vim
 
 # These files can be deleted after installation.
 rm -r README.md LICENSE assets/ .git/ .gitignore
